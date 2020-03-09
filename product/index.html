@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, minimum-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Exo:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link href="../styles/portfolio.css" rel="stylesheet" />
+
+    <title>
+      mnmlst.design | product design
+    </title>
+  </head>
+  <body>
+    <nav>
+      <a href="..">mnmlst.design</a>
+    </nav>
+    <article class="page">
+      <header>
+        <h1>product design</h1>
+      </header>
+
+      <section class="flow" id="ascend">
+        <header>
+          <h2>Cloud Dataflow Orchestration Platform</h2>
+          <h3>Ascend</h3>
+        </header>
+
+        <figure class="image-row">
+          <div
+            class="image img-16by9"
+            style="background-image: url(768/Working_with_SQL@2x.png)"
+          >
+            <a class="link img-link" href="fullsize/Working_with_SQL@2x.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">Vision Mockup: Dataflow IDE</figcaption>
+        </figure>
+
+        <p>
+          <a href="http://ascend.io">Ascend</a> is a Palo Alto startup which
+          offers a cloud-based platform for data engineers to design and
+          productionize complex data pipelines. Having joined as a front-end
+          developer while Ascend was still in <q>stealth mode</q>, I
+          transitioned to Product Management and Design, and was the sole
+          Product Manager when the product was
+          <a href="http://www.ascend.io/blog/introducing-the-autonomous-dataflow-service">launched</a>.
+        </p>
+
+        <figure class="float-right">
+          <div
+            class="image img-4by3"
+            style="background-image: url(448/IDE.png)"
+          >
+            <a class="link img-link" href="fullsize/IDE.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">Wireframe: Dataflow IDE</figcaption>
+        </figure>
+
+        <figure class="float-left">
+          <div
+            class="image img-4by3"
+            style="background-image: url(256/Branching.png)"
+          >
+            <a class="link img-link" href="fullsize/Branching.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">Wireframe: Branching a graph</figcaption>
+        </figure>
+
+        <p>
+          We had several projects still in flight at the time of the product
+          launch, and needed a way to communicate a coherent product vision to
+          the press and customers. Though we had wireframes, and some partial
+          implementation, for each of the new features, we needed high-fidelity
+          visuals which, while still somewhat aspirational, would be
+          representative of the future UI.
+        </p>
+
+        <p>
+          While my usual process is to go straight from wireframes to code (by
+          way of a <a href="../systems">design system</a>), these vision mockups
+          gave stakeholders a much clearer picture of what Product was planning.
+          It was also helpful for the development team to unite around a shared
+          vision of what they were building.
+        </p>
+
+        <div class="image-row-two">
+          <div
+            class="image img-16by9"
+            style="background-image: url(448/Under_the_Hood@2x.png)"
+          >
+            <a class="link img-link" href="fullsize/Under_the_Hood@2x.png">
+              click for full image
+            </a>
+          </div>
+          <div
+            class="image img-16by9"
+            style="background-image: url(448/Working_with_Notebook@2x.png)"
+          >
+            <a
+              class="link img-link"
+              href="fullsize/Working_with_Notebook@2x.png"
+            >
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Vision Mockups: Notebook and Timeline
+          </figcaption>
+        </div>
+
+        <figure class="float-left">
+          <div
+            class="image img-4by3"
+            style="background-image: url(224/Progress_by_Stage.png)"
+          >
+            <a class="link img-link" href="fullsize/Progress_by_Stage.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Mockup: Progress of multi-stage operation
+          </figcaption>
+        </figure>
+
+        <figure class="float-right">
+          <div
+            class="image img-4by3"
+            style="background-image: url(448/Timeline_sketch.jpeg)"
+          >
+            <a class="link img-link" href="fullsize/Timeline_sketch.jpeg">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Pencil sketch: Gantt chart timeline
+          </figcaption>
+        </figure>
+
+        <figure class="float-left">
+          <div
+            class="image img-4by3"
+            style="background-image: url(256/graph_with_gantt_chart_and_view_details.png)"
+          >
+            <a
+              class="link img-link"
+              href="fullsize/graph_with_gantt_chart_and_view_details.png"
+            >
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            High-fidelity wireframe: Processing details
+          </figcaption>
+        </figure>
+
+        <p>
+          One of the more challenging features to design for Ascend was the
+          timeline, which helps users observe where the system is spending time
+          and resources. Since there are dependencies between operations, a
+          Gantt chart was a natural choice. But start and stop times alone did
+          not give users enough insight, because each operation was executed in
+          pieces, with individual jobs being run simultaneously or in sequence
+          as the logic of the operation and the system's available resources
+          required. Representing all this activity as a single bar was losing
+          too much information; but overplotting bar segments for each job would
+          clutter the display and make the dependences harder to see.
+        </p>
+
+        <p>
+          The solution was keep the Gantt chart focused on the overall progress
+          of the computation, but provide an affordance to drill down to get
+          aggregate and individual job metrics. Working through the
+          implementation required a collaborative effort with engineering to
+          understand the constraints, propose various solutions, and evaluate
+          them on the basis of level of effort and benefit to users in terms of
+          the resulting depth of detail.
+        </p>
+
+        <figure class="float-right">
+          <div
+            class="image img-4by3"
+            style="background-image: url(448/Product_Overview.png)"
+          >
+            <a class="link img-link" href="fullsize/Product_Overview.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Conceptual Model: Dataflow orchestration
+          </figcaption>
+        </figure>
+        <p>
+          With a highly technical product like Ascend's, it can be challenging
+          to conceptualize the system in a way which is neither too detailed nor
+          too abstract. The Engineering team has their architectural diagrams,
+          but we don't want to overload users with details that are not
+          pertinent to their understanding of the system. On the other hand, if
+          we give too little information, users will not be able to reason about
+          how their interaction with the system affects its operation. A concise
+          conceptual model, even if not presented to users directly, provides a
+          foundation to the user experience, and a context for the vocabulary
+          used in the interface.
+        </p>
+      </section>
+
+      <section class="flow" id="orbital-insight">
+        <header>
+          <h2>Geospatial Analytics Portal</h2>
+          <h3>Orbital Insight</h3>
+        </header>
+
+        <figure class="float-left">
+          <div
+            class="image img-4by3"
+            style="background-image: url(256/Downloads.png)"
+          >
+            <a class="link img-link" href="fullsize/Downloads.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Mockup: Data downloads and API access
+          </figcaption>
+        </figure>
+
+        <p>
+          <a href="http://orbitalinsight.com">Orbital Insight</a>
+          provides geospatial data products and analytical tools across multiple
+          industries and government sectors.
+        </p>
+
+        <figure class="float-left">
+          <div
+            class="image img-4by3"
+            style="background-image: url(256/CFE_Geo_2.png)"
+          >
+            <a class="link img-link" href="fullsize/CFE_Geo_2.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">Mockup: Retail traffic data</figcaption>
+        </figure>
+
+        <p>
+          Our initial data product offering was retail traffic time series data
+          derived from satellite imagery of parking lots. While this data was
+          mostly consumed via an API, a visualization UI was essential for
+          customers to evaluate the data prior to purchasing the live data feed.
+          This UI consisted of a series of charts which demonstrated the
+          insights that could be drawn from the data, as determined by the
+          Product Manager and Data Science team.
+        </p>
+
+        <figure class="float-left">
+          <div
+            class="image img-4by3"
+            style="background-image: url(256/CFE_Geo_3.png)"
+          >
+            <a class="link img-link" href="fullsize/CFE_Geo_3.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Mockup: Crude oil storage data
+          </figcaption>
+        </figure>
+
+        <p>
+          When we released our second data product, which required different
+          analytics, the team created a new UI to showcase those unique
+          insights. After creating the third bespoke data visualization UI, the
+          Frontend Engineering team nearly revolted&mdash;we can't keep doing
+          this!
+        </p>
+
+        <figure class="image-row">
+          <div
+            class="image img-4by3"
+            style="background-image: url(768/CFE_Geo_1.png)"
+          >
+            <a class="link img-link" href="fullsize/CFE_Geo_1.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Mockup: Front page, with product listing and curated daily insights
+          </figcaption>
+        </figure>
+
+        <p>
+          As a result, we designed a data portal product for geospatial analytic
+          data. We identified key abstractions that were relevant to all of our
+          data products&mdash;geographic regions, time series, unitless indices,
+          categories&mdash;and devised navigation mechanisms along those axes.
+          Working with the Product Managers from each of the domains, we found
+          ways to maintain the unique visualizations for each product, while
+          factoring out the common ones, a win for both the customer and our
+          development team.
+        </p>
+
+        <figure class="image-row">
+          <div
+            class="image img-5by4"
+            style="background-image: url(768/Port_Monitoring_with_Bar_chart.png); padding-bottom: 77.34%"
+          >
+            <a
+              class="link img-link"
+              href="fullsize/Port_Monitoring_with_Bar_chart.png"
+            >
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">Mockup: Port Monitoring</figcaption>
+        </figure>
+      </section>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, minimum-scale=1, maximum-scale=1"
+      name="viewport"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Exo:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link href="../styles/portfolio.css" rel="stylesheet" />
+
+    <title>
+      mnmlst.design | design systems
+    </title>
+  </head>
+  <body>
+    <nav>
+      <a href="..">mnmlst.design</a>
+    </nav>
+    <article class="page">
+      <header>
+        <h1>Design Systems</h1>
+      </header>
+
+      <section class="flow">
+        <header>
+          <h2>A Design System for Geoanalytics</h2>
+          <h3>Orbital Insight</h3>
+        </header>
+
+        <p>
+          <a href="https://orbitalinsight.com">Orbital Insight</a>'s data
+          products each require their own UI to help customers evaluate and draw
+          insights from the data. Since customers often subscribe to multiple
+          products, we wanted to maintain a consistent experience across the
+          products. This became a challenge once we had a team of UI Engineers,
+          each working on a different product line.
+        </p>
+
+        <figure class="image-row">
+          <div
+            class="image"
+            style="background-image: url(768/OI-Patternbook.png)"
+          >
+            <a class="link img-link" href="fullsize/OI-Patternbook.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">The design system's home page</figcaption>
+        </figure>
+
+        <figure class="float-left">
+          <div
+            class="image img-2by3"
+            style="background-image: url(448/Button.png)"
+          >
+            <a class="link img-link" href="fullsize/Button.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Patternbook page for the <tt>Button</tt> component
+          </figcaption>
+        </figure>
+
+        <p>
+          To address this issue, we developed a design system which includes
+          common UI elements and data visualization primitives, all coded in
+          React. The design system is maintained as part of the production code
+          base, so any changes made to the components are immediately apparent
+          in the examples rendered in the design system. Keeping the design
+          system files alongside the source code also makes it much more
+          convenient for the UI team to keep the documentation up-to-date, and
+          facilitates use of the design system as a testing framework for the
+          components themselves.
+        </p>
+
+        <figure class="float-right">
+          <div
+            class="image img-2by3"
+            style="background-image: url(448/BarSeries.png)"
+          >
+            <a class="link img-link" href="fullsize/BarSeries.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Patternbook page for the <tt>BarSeries</tt> component, used to build
+            bar charts
+          </figcaption>
+        </figure>
+
+        <p>
+          The tooling for the design system is
+          <a href="https://github.com/mnmlstme/patternbook">Patternbook</a>, an
+          open-source side project I had created. In Patternbook, components are
+          documented in Markdown, and can include code examples that are
+          rendered inline alongside source code and data context. A shared
+          Patternbook server is deployed off the <tt>git</tt> master branch.
+          Developers can also run Patternbook in their own development branch,
+          in which case, source code changes are immediately visible in the
+          browser via <tt>webpack</tt> hot module reload.
+        </p>
+
+        <p>
+          Data visualization is a major part of the UI work at Orbital Insight.
+          The UI Engineers were familiar with D3, but we wanted Data Scientists
+          and Product Managers to design visualizations directly and iterate
+          more rapidly on those designs. The design system therefore includes a
+          fair number of data visualization components that can be combined to
+          create charts and maps. The team appreciated the approach taken by D3
+          (which abstracts out the concepts of series, axis, legend, scale,
+          etc., as separate layers which can be combined to create a wide
+          variety of visualizations from a fairly small set of primitives), so
+          we created an analogous set of React components, many of which were
+          simply wrappers around the D3 equivalents. Designing visualizations in
+          React this way is more intuitive than using D3 in Javascript, because
+          the definitions tend to be more declarative or functional.
+        </p>
+
+        <figure class="image-row">
+          <div
+            class="image img-2by3"
+            style="background-image: url(768/RegionSeries.png)"
+          >
+            <a class="link img-link" href="fullsize/RegionSeries.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            Patternbook page for the <tt>RegionSeries</tt> component, used to
+            build geographical charts (maps)
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="flow">
+        <header>
+          <h2>A pure CSS design system</h2>
+          <h3>vmware</h3>
+        </header>
+
+        <p>
+          The End-User Computing UI team at VMware used a variety of
+          technologies to render their web applications, both server-side and
+          in-browser. Users, however, were unaware of this because the pages all
+          looked consistent; styling was controlled by static CSS files. So when
+          it came to document and formalize our design system, it was clear that
+          effort would be focused on CSS.
+        </p>
+
+        <figure class="image-row">
+          <div
+            class="image img-16by10"
+            style="background-image: url(768/form.png)"
+          >
+            <a class="link img-link" href="fullsize/form.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            The Styleboard entry for <tt>form</tt>
+          </figcaption>
+        </figure>
+
+        <figure class="float-right">
+          <div
+            class="image img-16by10"
+            style="background-image: url(448/image.png)"
+          >
+            <a class="link img-link" href="fullsize/image.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            The Styleboard entry for <tt>image</tt>, a CSS class
+          </figcaption>
+        </figure>
+
+        <p>
+          I had previously created
+          <a href="https://github.com/mnmlstme/styleboard">Styleboard</a>
+          which analyzes the selectors in CSS files to extract the design
+          patterns, based on modular CSS naming conventions and
+          <a
+            href="https://github.com/mnmlstme/styleboard/blob/master/StyleDoc.md"
+            >doc strings</a
+          >
+          embedded in CSS comments. The team was already starting to apply the
+          principles of modular CSS (using SCSS) in an effort to be able to
+          share CSS definitions between applications. So a CSS-based design
+          system, called Xydeco, was initiated based on Styleboard.
+        </p>
+
+        <figure class="float-right">
+          <div
+            class="image img-16by10"
+            style="background-image: url(448/message.png)"
+          >
+            <a class="link img-link" href="fullsize/message.png">
+              click for full image
+            </a>
+          </div>
+          <figcaption class="caption">
+            The Styleboard entry for <tt>message</tt>, an Angular directive
+          </figcaption>
+        </figure>
+
+        <p>
+          While the team eventually standardized on AngularJS for all new
+          projects, and many of the components in Xydeco were reimplemented as
+          Angular directives, there was no need to migrate Xydeco to Angular.
+          The same CSS classes were still being used from Angular, and
+          Styleboard was easily adapted to accept examples coded in Angular
+          rather than static HTML.
+        </p>
+      </section>
+    </article>
+  </body>
+</html>
