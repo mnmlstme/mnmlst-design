@@ -70,7 +70,7 @@ h1 .stacked:nth-child(1) {
 }
 
 b {
-  opacity: 10%;
+  opacity: 0.1;
 }
 
 ol {
