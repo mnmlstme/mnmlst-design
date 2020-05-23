@@ -443,6 +443,7 @@ header h1 {
 
 .position {
     margin-top: 64px;
+    break-inside: avoid-page;
 }
 
 .meta {
