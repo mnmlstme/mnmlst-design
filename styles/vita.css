@@ -235,7 +235,8 @@ address + address {
 }
 
 address {
-  font-size: 125%;
+  line-height: 175%;
+  font-family: Exo, Verdana, Geneva, sans-serif;
   margin-bottom: .25em;
   margin-top: .25em;
   font-style: normal;
@@ -416,6 +417,7 @@ a {
     transition-duration: 300ms;
 }
 
+@media screen {
 a:hover {
     color: #888;
     text-shadow: 0 0 8px rgba(0,0,0,0.8);
@@ -424,6 +426,8 @@ a:hover {
 a.nohover:hover {
     color: inherit;
     background-color: inherit;
+}
+
 }
 
 a.more-link {
