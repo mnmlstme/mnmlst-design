@@ -313,10 +313,11 @@ h1 {
 }
 
 section h1 {
-    margin-top: 64px;
+    margin-top: 32px;
     border-bottom: 1px solid #888;
     width: 100%;
     text-transform: lowercase;
+    font-weight: 600;
 }
 
 h1 + h2 {
@@ -446,7 +447,7 @@ header h1 {
 }
 
 .position {
-    margin-top: 64px;
+    margin-top: 32px;
     break-inside: avoid-page;
 }
 
@@ -466,16 +467,6 @@ header h1 {
 }
 
 
-.date + .title {
-    margin-top: -.05em;
-}
-
-.title {
-    font-size: 150%;
-    line-height: 1.1;
-    font-weight: 300;
-}
-
 .position .title {
     text-align: right;
 }
@@ -483,6 +474,8 @@ header h1 {
 .location {
     text-align: right;
     font-size: 120%;
+    font-weight: 600;
+    line-height: 1.1;
 }
 
 .city {
@@ -506,7 +499,7 @@ header h1 {
 }
 
 .position {
-    margin-top: 64px;
+    margin-top: 32px;
 }
 
 .meta {
@@ -519,16 +512,12 @@ header h1 {
     font-size: 80%;
     line-height: 1;
     text-align: right;
-    font-weight: 300;
+    font-weight: 600;
     color: #666;
 }
 
-.date + .title {
-    margin-top: -.05em;
-}
-
 .title {
-    font-size: 150%;
+    font-size: 133%;
     line-height: 1.1;
     font-weight: 300;
 }
@@ -540,6 +529,7 @@ header h1 {
 .location {
     text-align: right;
     font-size: 120%;
+    font-weight: 600;
 }
 
 .city {
