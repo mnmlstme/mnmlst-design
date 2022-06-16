@@ -33,44 +33,33 @@ header {
   display: flex;
   justify-content: space-between;
   font-weight: 900;
-  font-size: 48px;
+  font-size: 42px;
   line-height: 64px;
 }
 
 h1,
 h2 {
   display: flex;
-  align-items: flex-end;
   margin: 0;
-  text-transform: lowercase;
   flex-basis: 256px;
 }
 
-h1 > span,
-h2 > span {
-  display: inline-block;
-  width: 50%;
-  flex-grow: 1;
-}
-
 .stacked {
-  word-break: break-all;
-}
-
-.stacked:nth-child(2n + 1) {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .stacked:nth-child(2n) {
-  text-align: right;
+  align-items: flex-end;
+  align-self: flex-end;
 }
 
-h1 .stacked:nth-child(1) {
-  width: 140px;
+h1 > .stacked, h2 > .stacked {
+  width: 128px;
 }
 
 b {
-  opacity: 10%;
+  opacity: 0.1;
 }
 
 ol {
@@ -102,7 +91,7 @@ li:nth-child(3) {
 }
 
 .line {
-  display: block;
+  display: inline-block;
 }
 
 a {
@@ -125,6 +114,7 @@ a.nohover:hover {
   background-color: inherit;
 }
 
+
 @media print, screen and (max-width: 639px) {
   .page {
     width: 320px;
@@ -132,7 +122,7 @@ a.nohover:hover {
   }
 
   header {
-    font-size: 24px;
+    font-size: 21px;
     line-height: 32px;
   }
 
@@ -141,8 +131,8 @@ a.nohover:hover {
     flex-basis: 128px;
   }
 
-  h1 .stacked:nth-child(1) {
-    width: 70px;
+  h1 > .stacked, h2 > .stacked {
+    width: 64px;
   }
 
   ol {
