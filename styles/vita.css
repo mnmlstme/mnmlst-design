@@ -5,389 +5,128 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  --type-body: Inter, Helvetica, Arial, sans-serif;
+  --type-display: "Zilla Slab", Georgia, serif;
+  --type-code: "Anonymous Pro", "Courier New", Courier, monospace;
+
   background-color: white;
   background-image: url(../graphics/grid64.svg);
   background-repeat: repeat;
   background-position: center top;
-  width: 100%;
-  padding: 0;
-  margin: auto;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.page {
+  display: grid;
+  width: 60rem;
+  margin: 2rem auto;
+  grid-template-columns: [aside] 20rem [body] 16rem 16rem [end];
+  align-items: baseline;
+  gap: 2rem 4rem;
+  font-family: var(--type-body);
   line-height: 1.5;
   color: #333;
 }
 
-.page {
-  width: 256px;
-  margin: 0 auto;
+.page > * {
+  margin: 0;
   padding: 0;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
-.page:after {
-  content: " ";
-  display: block;
-  clear: both;
+.page > section,
+.page > section > .position,
+.page > section > .across {
+  display: contents;
 }
 
-.across > :nth-child(3n + 2) .meta {
-  width: 288px;
-}
-
-.across > :nth-child(3n + 3) .meta {
-  width: 224px;
-}
-
-@media print, screen and (min-width: 704px) {
-  .page {
-    width: 640px;
-    padding: 0;
-  }
-}
-
-@media print, screen and (min-width: 960px) {
-  .page {
-    width: 896px;
-  }
-}
-
-@media print, screen and (min-width: 1216px) {
-  .page {
-    width: 1152px;
-  }
-}
-
-header {
-  text-align: right;
-  min-height: 64px;
-}
-
-header > a {
-  display: block;
-}
-
-header img#kek {
-  margin-right: 72px;
-  vertical-align: top;
-}
-
-header h1 {
-  margin-bottom: 64px;
-  text-align: right;
-}
-
-@media print, screen and (min-width: 704px) {
-  header {
-    width: 192px;
-  }
-  header img#kek {
-    margin-right: -128px;
-  }
-  header h1 {
-    float: left;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  nav {
-    text-align: left;
-    margin-left: 192px;
-  }
-}
-
-@media print, screen and (min-width: 960px) {
-  header {
-    width: 320px;
-  }
-  header img#kek {
-    margin-right: -64px;
-  }
-  header h1 {
-    margin-left: 64px;
-    margin-right: 0;
-  }
-}
-
-@media print, screen and (min-width: 1216px) {
-  header {
-    width: 640px;
-  }
-  header img#kek {
-    margin-right: 264px;
-  }
-}
-
-section {
-  margin: 0 auto;
-}
-
-/*@media print, screen and (min-width: 1216px) {*/
-section {
-  width: 834px;
-}
-section h1 {
-  margin-bottom: 0;
-}
-section:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
 section .position {
-  float: left;
   line-height: 1.25;
 }
+
 section .meta {
-  width: 320px;
-  float: left;
-  clear: left;
+  grid-column: aside / span 1;
+}
+
+section .meta {
+  font-family: var(--type-display);
   margin-top: 0.25em; /* align w/ text adjacent */
   position: relative;
-}
-section .meta .date,
-section .meta .title,
-section .meta .location,
-section .meta .city {
   text-align: left;
 }
+
 section .meta .date:first-child {
   position: absolute;
   top: -1.5em;
 }
-section p {
-  margin-left: 320px;
-}
-/*}*/
 
-table {
-  margin: 0;
-  padding: 0;
-  border: none;
-  border-spacing: 0;
+section h2 {
+  grid-column: aside / span 1;
 }
 
-table.spread {
-  width: 100%;
+section#kek > * {
+  grid-column: 2 / span 1;
+  align-self: start;
 }
 
-tr {
-  margin: 0;
-  padding: 0;
+section#kek > address {
+  grid-column: 3 / span 1;
 }
 
-tr.vspace {
-  height: 1em;
-}
-
-td {
-  margin: 0;
-  padding: 0;
-  border: none;
-}
-
-th {
-  font-family: Exo, Verdana, Geneva, sans-serif;
-  margin: 0;
-  padding: 0;
-  border: none;
-  text-align: left;
-}
-
-td.right {
+section address {
   text-align: right;
 }
 
-ul {
-  list-style-type: none;
-  margin-top: 0px;
-  margin-left: 0;
-  padding-left: 0px;
-}
-
-dl {
-  margin-top: 0px;
-  margin-left: 0;
-  padding-left: 0px;
-}
-
-dt {
-  margin-top: 0px;
-  font-size: 100%;
-  font-family: Exo, Verdana, Geneva, sans-serif;
-  font-weight: bold;
-  font-style: normal;
-  color: black;
-}
-
-dd {
-  margin-top: 0px;
-}
-
-p {
-  margin-top: 0;
-}
-
-.meta {
-  margin: 16px 0;
+section p,
+section .flow {
+  grid-column: body / end;
+  font-size: 0.875rem;
 }
 
 p + p {
-  margin-top: 16px;
-}
-
-address + address {
-  margin-top: 0;
-}
-
-address {
-  line-height: 1.75;
-  font-family: Exo, Verdana, Geneva, sans-serif;
-  margin-bottom: 0.25em;
-  margin-top: 0.25em;
-  font-style: normal;
-  text-align: right;
-}
-
-img {
-  border: none;
-}
-
-img#kek {
-  width: 192px;
-  height: 64px;
-}
-
-.float-right {
-  float: right;
-  margin-left: 8px;
-}
-
-.float-left {
-  float: left;
-  margin-right: 8px;
-}
-
-.caption {
-  font-size: 80%;
-  font-style: normal;
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-
-.caption p:last-child {
-  margin-bottom: 0;
-}
-
-.float-right .caption {
-  text-align: right;
-}
-
-.attribution {
-  font-size: 64%;
-  font-style: oblique;
-  text-align: right;
-  margin-top: -4px;
-  padding-top: 0px;
-}
-
-hr {
-  margin-top: 16px;
-  margin-bottom: 16px;
-  width: 100%;
-  text-align: left;
-  color: #bbbbbb;
-  /* the following two lines are for Firefox (CSS2?) */
-  border: 0px;
-  border-top: 1px solid #c42231;
-  /* the following works in IE6 */
-  height: 1px;
+  margin-top: 1em;
 }
 
 h1 {
-  margin-top: 0px;
-  margin-bottom: 16px;
-  font-size: 200%;
-  line-height: 1.5;
-  padding-top: 0.5em;
+  margin-top: 0;
+  font-size: 2rem;
+  line-height: 2rem;
   color: black;
-  font-family: Exo, Verdana, Geneva, sans-serif;
+  font-family: var(--type-display);
   font-style: normal;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: lowercase;
-}
-
-section h1 {
-  border-bottom: 1px solid #888;
-  width: 100%;
-  text-transform: lowercase;
   font-weight: 600;
-}
-
-h1 + h2 {
-  margin-top: -15px;
-  margin-bottom: 15px;
-}
-
-/* IE does not support sibling selectors (h1 + h2), so we have to tag it: */
-
-h2.subtitle {
-  margin-top: -15px;
-  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
 h2 {
-  margin-top: 0px;
-  font-size: 150%;
+  margin-top: 0;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+  font-family: var(--type-display);
   color: black;
-  font-family: Exo, Verdana, Geneva, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  text-transform: lowercase;
-}
-
-h3.subtitle {
-  margin-top: -10px;
-  margin-bottom: 10px;
 }
 
 h3 {
-  margin-top: 0px;
-  margin-bottom: 0.25em;
-  font-size: 125%;
-  font-family: Exo, Verdana, Geneva, sans-serif;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: normal;
+  font-family: var(--type-display);
+}
+
+address {
+  font-size: 1rem;
+  font-family: var(--type-display);
+  font-weight: normal;
   font-style: normal;
-  font-weight: 500;
-  color: black;
-  text-transform: lowercase;
+  line-height: 2rem;
 }
 
-h4.subtitle {
-  margin-top: -8px;
-  margin-bottom: 5px;
-}
-
-h4 {
-  font-family: Exo, Verdana, Geneva, sans-serif;
-  font-size: 100%;
-  font-weight: 500;
-  font-style: oblique;
-  margin-top: 0px;
-}
-
-h5 {
-  font-family: Exo, Verdana, Geneva, sans-serif;
-  font-size: 80%;
-  font-weight: 500;
-  margin-top: 0px;
-}
-
-b {
-  font-style: normal;
-  font-weight: bold;
+address > a {
+  display: block;
 }
 
 small {
@@ -396,25 +135,7 @@ small {
   white-space: nowrap;
 }
 
-big {
-  font-size: 125%;
-}
-
-.nobr {
-  white-space: nowrap;
-}
-
-q:before {
-  content: "\201C"; /* &ldquo; */
-}
-
-q:after {
-  content: "\201D"; /* &rdquo; */
-}
-
 a {
-  font-family: Exo, Verdana, Geneva, sans-serif;
-  font-weight: 500;
   font-size: 100%;
   text-decoration: none;
   color: black;
@@ -422,6 +143,27 @@ a {
   -webkit-transition-duration: 300ms;
   -moz-transition-duration: 300ms;
   transition-duration: 300ms;
+}
+
+ul {
+  list-style: none;
+  font-weight: normal;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+li::after {
+  content: "/";
+  margin: 0 0.5em;
+}
+
+li:last-child::after {
+  content: none;
 }
 
 @media screen {
@@ -436,119 +178,37 @@ a {
   }
 }
 
-a.more-link {
-  font-size: 80%;
-  vertical-align: middle;
-}
-
-a.more-link:after {
-  content: "\21E2";
-  font-size: 125%;
-  vertical-align: middle;
-}
-
-header h1 {
-  display: none;
-}
-
 .position {
-  margin-top: 32px;
   break-inside: avoid-page;
 }
 
-.meta {
-  font-family: Exo, Verdana, Georgia, sans-serif;
-  margin-bottom: 15px;
-}
-
 .date {
+  font-family: var(--type-body);
   margin-top: 0.5em;
   margin-bottom: 0;
-  font-size: 80%;
+  font-size: 0.875rem;
   line-height: 1;
-  text-align: right;
-  font-weight: 300;
-  color: #666;
-}
-
-.position .title {
-  text-align: right;
-  line-height: 1.125;
-  margin-bottom: 0.5rem;
-}
-
-.location {
-  text-align: right;
-  font-size: 133%;
-  font-weight: 600;
-}
-
-.city {
-  text-align: right;
-}
-
-#toolbox span {
-  padding-left: 3px;
-  white-space: nowrap;
-}
-
-@media print, screen and (min-width: 1216px) {
-  header img#kek {
-    margin-right: 256px;
-  }
-}
-
-header h1 {
-  display: none;
-}
-
-.position {
-  margin-top: 32px;
-}
-
-.meta {
-  font-family: Exo, Verdana, Georgia, sans-serif;
-  margin-bottom: 15px;
-}
-
-.date {
-  margin-bottom: 0;
-  font-size: 80%;
-  line-height: 1;
-  text-align: right;
-  font-weight: 600;
-  color: #666;
 }
 
 .title {
-  font-size: 125%;
-  line-height: 1.125;
-  font-weight: 300;
-}
-
-.position .title {
-  text-align: right;
+  font-size: 1.125rem;
+  line-height: 1.25rem;
+  margin-left: 4rem;
+  text-indent: -4rem;
+  color: #080808;
 }
 
 .location {
-  text-align: right;
-  font-size: 133%;
-  font-weight: 600;
+  font-size: 1.25rem;
+  margin-left: 4rem;
+  text-indent: -4rem;
 }
 
 .city {
-  text-align: right;
+  margin-left: 4rem;
   font-weight: 300;
-  color: #666;
 }
 
-#toolbox span {
-  padding-left: 3px;
-  white-space: nowrap;
-}
-
-@media print, screen and (min-width: 1216px) {
-  header img#kek {
-    margin-right: 256px;
-  }
+.ignore {
+  display: none !important;
 }
