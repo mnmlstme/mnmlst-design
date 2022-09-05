@@ -24,7 +24,7 @@ body {
   display: grid;
   width: 60rem;
   margin: 2rem auto;
-  grid-template-columns: [aside] 20rem [body] 16rem 16rem [end];
+  grid-template-columns: [aside] 1fr [body] 1fr 1fr [end];
   align-items: baseline;
   gap: 2rem 4rem;
   font-family: var(--type-body);
