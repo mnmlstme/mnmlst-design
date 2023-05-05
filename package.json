@@ -1,0 +1,13 @@
+{
+  "name": "mnmlst-design",
+  "version": "1.0.0",
+  "description": "Portfolio of Ken Kubiak",
+  "scripts": {
+    "publish": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve"
+  },
+  "author": "ken@mnmlst.me",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}
