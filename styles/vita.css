@@ -54,12 +54,11 @@ section .meta {
 
 section .meta .date:first-child {
   position: absolute;
-  top: -1.5em;
+  top: -1.25em;
 }
 
 section h2 {
   grid-column: aside / span 1;
-  margin-top: 0.5em;
 }
 
 section#kek > * {
@@ -107,12 +106,13 @@ h2 {
 h3,
 .title {
   font-size: 1.125rem;
-  line-height: 1.5;
+  line-height: 1;
   font-weight: normal;
   font-family: var(--type-display);
 }
 
-address {
+address,
+header h3 {
   font-family: var(--type-display);
   font-size: 1.125rem;
   font-weight: normal;
@@ -177,7 +177,7 @@ li:last-child::after {
   font-family: var(--type-body);
   margin-top: 0.5em;
   margin-bottom: 0;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   line-height: 1;
 }
 
