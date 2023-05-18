@@ -23,10 +23,20 @@ body {
   margin: 2rem auto;
   grid-template-columns: [aside] 1fr [body] 1fr 1fr [end];
   align-items: baseline;
-  gap: 1.5rem 3rem;
+  gap: 2rem 3rem;
   font-family: var(--type-body);
   line-height: 1.5;
   color: #333;
+}
+
+@media print {
+  body {
+    font-size: 13pt;
+  }
+
+  .page {
+    margin: 24pt 0;
+  }
 }
 
 .page > * {
@@ -41,20 +51,21 @@ body {
 }
 
 section .meta {
+  /* font-family: var(--type-display); */
+  position: relative;
   grid-column: aside / span 1;
+  text-align: right;
+  line-height: 1.2;
 }
 
-section .meta {
-  /* font-family: var(--type-display); */
-  margin-top: 0.25em; /* align w/ text adjacent */
-  position: relative;
+section .across .meta {
   text-align: left;
-  line-height: 1.2;
 }
 
 section .meta .date:first-child {
   position: absolute;
-  top: -1.25em;
+  bottom: 100%;
+  right: 0;
 }
 
 section h2 {
@@ -114,10 +125,9 @@ h3,
 address,
 header h3 {
   font-family: var(--type-display);
-  font-size: 1.125rem;
   font-weight: normal;
   font-style: normal;
-  line-height: 2rem;
+  line-height: 1.5rem;
 }
 
 address > a {
@@ -133,7 +143,7 @@ small {
 a {
   font-size: 100%;
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
 ul {
@@ -182,15 +192,12 @@ li:last-child::after {
 }
 
 .title {
-  font-size: 1.25rem;
-  margin-left: 1rem;
-  text-indent: -1rem;
+  font-size: 1.125rem;
 }
 
 .location {
   font-family: var(--type-display);
   font-size: 1rem;
-  font-weight: 300;
   margin-left: 2rem;
   text-indent: -1rem;
 }
